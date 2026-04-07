@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFlix - Welcome</title>
+
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- ✅ Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="landing-body">
+
+    <!-- Video Background -->
+    <div class="video-bg">
+        <!-- ✅ FIX: added fallback text inside video -->
+        <video autoplay muted loop playsinline poster="https://via.placeholder.com/1920x1080/000000/FFFFFF?text=MovieFlix">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-film-strip-with-old-movies-2264-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar landing-nav">
+        <div class="logo">Movie<span>Flix</span></div>
+        <div class="nav-links">
+            <a href="#" class="btn-login">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <h1>Welcome to MovieFlix</h1>
+        <p>Discover your next favorite Bollywood movie</p>
+        <a href="/home" class="btn-cta">Let's Explore</a>
+    </div>
+
+    <!-- ✅ FIX: updated year (optional but correct) -->
+    <footer class="landing-footer">
+        <p>&copy; 2026 MovieFlix. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

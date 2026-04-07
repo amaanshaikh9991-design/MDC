@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFlix - Home</title>
+
+    <!-- ✅ CSS (Flask correct path) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- ✅ Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Font Awesome (no change, just cleaned) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="app-body">
+
+    <!-- Navigation -->
+    <nav class="navbar app-nav" id="navbar">
+        <div class="logo">Movie<span>Flix</span></div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search movies...">
+            <div id="searchResults" class="search-dropdown"></div>
+        </div>
+
+        <div class="nav-links">
+            <a href="/home" class="active">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">My List</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Hero Banner -->
+        <section class="app-hero">
+            <div class="app-hero-text">
+                <h2>Trending Now</h2>
+                <p>Top picks for you based on popularity</p>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <button class="cat-btn active" data-filter="all">All</button>
+            <button class="cat-btn" data-filter="Action">Action</button>
+            <button class="cat-btn" data-filter="Drama">Drama</button>
+            <button class="cat-btn" data-filter="Comedy">Comedy</button>
+            <button class="cat-btn" data-filter="Thriller">Thriller</button>
+        </section>
+
+        <!-- Movie Grid -->
+        <section id="movieGrid" class="movie-grid">
+            <div class="loader">Loading Movies...</div>
+        </section>
+
+        <!-- Recommendation Section -->
+        <section id="recommendationSection" class="rec-section hidden">
+            <h3>Because you watched <span id="recSourceTitle"></span></h3>
+            <div id="recGrid" class="movie-grid"></div>
+            <button id="closeRec" class="btn-secondary">Close Recommendations</button>
+        </section>
+
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modalImg" src="" alt="Poster">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">Title</h2>
+                    <div class="meta">
+                        <span id="modalYear">2023</span> | 
+                        <span id="modalRating">⭐ 8.5</span>
+                    </div>
+                    <p class="genre" id="modalGenre">Action</p>
+                    <p><strong>Director:</strong> <span id="modalDirector">Name</span></p>
+                    <p class="desc">Experience the thrill of Bollywood cinema with this masterpiece.</p>
+                    <button id="btnRecommend" class="btn-cta">Get Recommendations</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with ❤️ by MovieFlix Team</p>
+    </footer>
+
+    <!-- ✅ JS (kept at bottom – correct) -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
